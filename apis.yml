@@ -28,10 +28,14 @@ apis:
     description: >-
       The Ferro Corporation API provides access to platform services and data for enterprise integration and automation.
 common:
+  - type: DomainSecurity
+    url: security/ferro-domain-security.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/ferro-corporation
   - type: Website
     url: https://www.ferro.com
+  - url: https://vibrantz.com/feed/
+    type: Blog
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
