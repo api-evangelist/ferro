@@ -19,47 +19,151 @@ accessModel:
   trial: false
   try_now: false
   public: false
-  label: Unknown
-  confidence: low
+  label: No public API program
+  confidence: high
   source:
   - plans
   - {url: 'https://www.ferro.com', status: 301, note: 'declared website redirects to https://vibrantz.com/ — a different registrable domain (ferro.com -> vibrantz.com), possible rename or acquisition (probed 2026-09-03, roadmap#169)'}
-  generated: '2026-07-22'
-  method: derived
+  - {url: 'https://vibrantz.com/developers/', status: 404, note: 'successor site publishes no developer program; api.ferro.com and developer.ferro.com are NXDOMAIN (probed 2026-09-17)'}
+  generated: '2026-09-17'
+  method: researched
+position: Consuming
+access: 3rd-Party
+x-api-posture: no-product-api
+x-api-posture-basis: observed
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/ferro.png
 tags:
   - Functional Materials
   - Electronics
+  - Chemicals
+  - Specialty Chemicals
+  - Pigments
+  - Coatings
+  - Vibrantz Technologies
+  - Acquired
+  - Fortune 1000
+tags_raw:
+  - Functional Materials
+  - Electronics
   - Chemical
+  - Specialty Chemicals
+  - Pigments
+  - Coatings
+  - Vibrantz Technologies
+  - Acquired
+  - Fortune 1000
 description: >-
-  Ferro Corporation is a major US corporation and Fortune 1000 company. The Ferro Corporation API provides programmatic access to its platform services, data, and integrations for enterprise customers and partners.
+  Ferro Corporation was a Cleveland-area, NYSE-listed (FOE) Fortune 1000 producer of
+  functional coatings, color solutions, glass enamels, pigments and electronic
+  materials. In April 2022 it was acquired by Prince International (American
+  Securities) and merged with Prince and Chromaflo to form Vibrantz Technologies
+  (vibrantz.com); Ferro filed a Form 15 with the SEC on 2022-05-02 and ferro.com now
+  301-redirects to vibrantz.com. Neither the legacy Ferro brand nor Vibrantz publishes
+  a developer program, an API reference or a machine-readable contract: api.ferro.com
+  and developer.ferro.com do not resolve, vibrantz.com answers 404 on every developer,
+  OpenAPI and /.well-known/ path probed on 2026-09-17, and its only machine-readable
+  surfaces are a Yoast-generated llms.txt, an RSS feed and the default WordPress
+  /wp-json/ index. Machine-readable company data exists only through third-party
+  channels — Ferro's historical SEC filings (CIK 0000035214) remain on the SEC's own
+  EDGAR APIs.
 created: '2026-04-19'
-modified: '2026-04-19'
+modified: '2026-09-17'
 specificationVersion: '0.23'
 apis:
-  - aid: ferro:ferro-api
-    name: Ferro Corporation API
-    tags:
-      - Functional Materials
-      - Electronics
-      - Chemical
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    baseURL: https://api.ferro.com
-    humanURL: https://developer.ferro.com
-    properties:
-      - url: https://developer.ferro.com/docs
-        type: Documentation
+  - aid: ferro:sec-edgar-filings
+    name: SEC EDGAR Filings (Ferro Corporation, CIK 0000035214)
     description: >-
-      The Ferro Corporation API provides access to platform services and data for enterprise integration and automation.
+      Machine-readable historical filing data for Ferro Corporation is available from
+      the U.S. Securities and Exchange Commission, not from the company. The SEC EDGAR
+      submissions API returns the full filing history for CIK 0000035214 (FERRO CORP)
+      as JSON — 10-K, 10-Q, 8-K and proxy filings through the 2022 acquisition, the
+      Form 15-12B deregistration of 2022-05-02, and beneficial-ownership amendments
+      into 2023. This is a third-party government API listed here because it is the
+      only real programmatic access to this company's data; Ferro no longer files.
+    humanURL: https://www.sec.gov/search-filings/edgar-application-programming-interfaces
+    baseURL: https://data.sec.gov
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+    tags:
+      - Filings
+      - SEC EDGAR
+      - Third Party
+    tags_raw:
+      - Filings
+      - SEC EDGAR
+      - Third-Party
+    properties:
+      - type: Documentation
+        url: https://www.sec.gov/search-filings/edgar-application-programming-interfaces
+      - type: APIReference
+        url: https://data.sec.gov/submissions/CIK0000035214.json
+    x-evidence:
+      verified: '2026-09-17'
+      method: fetched documentation and called the endpoint
+      documentation: >-
+        The SEC's EDGAR APIs page (HTTP 200) documents RESTful JSON APIs on data.sec.gov
+        — https://data.sec.gov/submissions/CIK##########.json plus the XBRL
+        companyconcept, companyfacts and frames APIs. No authentication or API key is
+        required; a declared User-Agent and a 10-request-per-second ceiling are the
+        stated fair-access terms.
+      endpoint_check: >-
+        GET https://data.sec.gov/submissions/CIK0000035214.json returned HTTP 200 with
+        JSON naming "FERRO CORP", no current ticker, and 1,000 recent filings whose
+        latest entries are an SC 13G/A dated 2023-02-10 and the 15-12B dated
+        2022-05-02.
 common:
-  - type: DomainSecurity
-    url: security/ferro-domain-security.yml
-  - type: LinkedIn
-    url: https://www.linkedin.com/company/ferro-corporation
+  - type: Website
+    url: https://vibrantz.com/
   - type: Website
     url: https://www.ferro.com
-  - url: https://vibrantz.com/feed/
-    type: Blog
+  - type: Contact
+    url: https://vibrantz.com/contact-us/
+  - type: Careers
+    url: https://vibrantz.com/careers/
+  - type: PressReleases
+    url: https://vibrantz.com/press/
+  - type: Blog
+    url: https://vibrantz.com/vibrantz-edge/
+  - type: BlogRSS
+    url: https://vibrantz.com/feed/
+  - type: PrivacyPolicy
+    url: https://vibrantz.com/privacy/
+  - type: TermsOfService
+    url: https://vibrantz.com/legal/
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/ferro-corporation
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/vibrantztechnologies
+  - type: LLMsTxt
+    url: llms/ferro-llms.txt
+  - type: DomainSecurity
+    url: security/ferro-domain-security.yml
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
+x-enrichment:
+  date: '2026-09-17'
+  status: minimal
+  artifacts_added: 2
+  pass: local-v3
+x-coverage:
+  state: none
+  reason: defunct
+  detail: >-
+    Ferro Corporation was absorbed into Vibrantz Technologies in 2022 — ferro.com
+    301-redirects every path to the vibrantz.com root, the scaffolded hosts
+    api.ferro.com and developer.ferro.com do not resolve in DNS, and vibrantz.com
+    answers 404 on /developers/, /api/, /openapi.json and every /.well-known/ path,
+    publishing only a Yoast llms.txt, an RSS feed and the default WordPress /wp-json/
+    index.
+  evidence:
+    - url: https://www.ferro.com/
+      status: 301
+    - url: https://vibrantz.com/developers/
+      status: 404
+    - url: https://vibrantz.com/openapi.json
+      status: 404
+    - url: https://vibrantz.com/.well-known/agent-card.json
+      status: 404
+    - url: https://vibrantz.com/llms.txt
+      status: 200
+  checked: '2026-09-17'

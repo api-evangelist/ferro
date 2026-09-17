@@ -64,7 +64,7 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Ferro Corporation is a major US corporation and Fortune 1000 company. The Ferro Corporation API provides programmatic access to its platform services, data, and integrations for enterprise customers and partners.
+Ferro Corporation was a NYSE-listed (FOE) Fortune 1000 producer of functional coatings, color solutions, glass enamels, pigments and electronic materials. In 2022 it was acquired by Prince International and merged into Vibrantz Technologies (vibrantz.com); ferro.com now redirects there. Neither Ferro nor Vibrantz publishes a developer program, an API reference or a machine-readable contract (api.ferro.com and developer.ferro.com do not resolve; vibrantz.com answers 404 on every developer, OpenAPI and /.well-known/ path probed 2026-09-17). Machine-readable company data exists only through third-party channels — Ferro's historical SEC filings (CIK 0000035214) remain available through the SEC's own EDGAR APIs.
 
 **URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/ferro/refs/heads/main/apis.yml)
 
@@ -72,12 +72,12 @@ Ferro Corporation is a major US corporation and Fortune 1000 company. The Ferro 
 
 ## Tags:
 
- - Functional Materials, Electronics, Chemical
+ - Functional Materials, Electronics, Chemicals, Specialty Chemicals, Pigments, Coatings, Vibrantz Technologies, Acquired, Fortune 1000
 
 ## Timestamps
 
 - **Created:** 2026-04-19
-- **Modified:** 2026-04-19
+- **Modified:** 2026-09-17
 
 ## Maintainers
 

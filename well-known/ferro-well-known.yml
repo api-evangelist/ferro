@@ -1,0 +1,78 @@
+generated: '2026-09-17'
+method: probed
+source: live GET of each /.well-known/ path on every host the record knows (2026-09-17)
+description: >-
+  Results of probing the /.well-known/ discovery surface for Ferro Corporation. The
+  legacy hosts ferro.com and www.ferro.com answer every path with a 301 to the
+  vibrantz.com root (Ferro merged into Vibrantz Technologies in 2022), so nothing
+  is served there; the placeholder API hosts api.ferro.com and developer.ferro.com
+  do not resolve in DNS (NXDOMAIN); and the successor host vibrantz.com returns a
+  plain 404 on every /.well-known/ path. No document was found on any host, so no
+  WellKnown or SecurityTxt pointer is wired in apis.yml — this file records an
+  absence. vibrantz.com does serve /llms.txt (a Yoast-generated site map, saved to
+  llms/ferro-llms.txt) and a WordPress /wp-json/ index, neither of which is a
+  .well-known document.
+hosts:
+  - host: https://ferro.com
+    note: every path 301s to https://vibrantz.com/ (no document served on this host)
+    documents:
+      - path: /.well-known/security.txt
+        status: 301
+      - path: /.well-known/openid-configuration
+        status: 301
+      - path: /.well-known/oauth-authorization-server
+        status: 301
+      - path: /.well-known/oauth-protected-resource
+        status: 301
+      - path: /.well-known/api-catalog
+        status: 301
+      - path: /.well-known/ai-plugin.json
+        status: 301
+      - path: /.well-known/agent-card.json
+        status: 301
+      - path: /.well-known/agent.json
+        status: 301
+  - host: https://www.ferro.com
+    note: every path 301s to https://vibrantz.com/ (no document served on this host)
+    documents:
+      - path: /.well-known/security.txt
+        status: 301
+      - path: /.well-known/openid-configuration
+        status: 301
+      - path: /.well-known/oauth-authorization-server
+        status: 301
+      - path: /.well-known/oauth-protected-resource
+        status: 301
+      - path: /.well-known/api-catalog
+        status: 301
+      - path: /.well-known/ai-plugin.json
+        status: 301
+      - path: /.well-known/agent-card.json
+        status: 301
+      - path: /.well-known/agent.json
+        status: 301
+  - host: https://api.ferro.com
+    note: NXDOMAIN — the host named as baseURL by the prior scaffold does not exist
+    documents: []
+  - host: https://developer.ferro.com
+    note: NXDOMAIN — the host named as humanURL by the prior scaffold does not exist
+    documents: []
+  - host: https://vibrantz.com
+    note: successor brand site (WordPress); plain 404 on every path
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/oauth-protected-resource
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
