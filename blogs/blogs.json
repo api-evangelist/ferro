@@ -2,13 +2,6 @@
   "repo": "ferro",
   "feeds": [
     {
-      "source": "https://vibrantz.com/press/",
-      "feed_url": "https://vibrantz.com/press/feed/",
-      "title": "",
-      "saved": 0,
-      "method": "discovered"
-    },
-    {
       "source": "https://vibrantz.com/vibrantz-edge/",
       "feed_url": "https://vibrantz.com/feed/",
       "title": "",
@@ -16,21 +9,21 @@
       "method": "discovered"
     },
     {
-      "source": "https://vibrantz.com/press/feed/",
-      "feed_url": "https://vibrantz.com/press/feed/",
-      "title": "",
-      "saved": 0,
-      "method": "feed"
-    },
-    {
       "source": "https://vibrantz.com/feed/",
       "feed_url": "https://vibrantz.com/feed/",
       "title": "",
       "saved": 0,
       "method": "feed"
+    },
+    {
+      "source": "https://vibrantz.com/press/feed/",
+      "feed_url": "https://vibrantz.com/press/feed/",
+      "title": "",
+      "saved": 0,
+      "method": "feed"
     }
   ],
-  "fetched": "2026-10-03T12:30:02Z",
+  "fetched": "2026-10-10T13:15:00Z",
   "post_count": 25,
   "feed_nature": "undetermined",
   "feed_nature_basis": null,
