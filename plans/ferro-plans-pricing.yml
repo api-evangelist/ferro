@@ -1,0 +1,65 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: Ferro Corporation
+providerId: ferro
+created: '2026-05-04'
+# Provenance stamped 2026-08-11: this artifact was written by the API Evangelist
+# bulk sweep dated 2026-05-04, not harvested from the provider. See roadmap#35.
+method: generated
+modified: '2026-05-05'
+reconciled: false
+tags:
+  - Functional Materials
+  - Electronics
+  - Chemical
+  - Acquired
+description: Ferro Corporation, a former Fortune 1000 specialty materials/chemicals company, was acquired
+  by Prince International Corporation and merged in 2022 to form Vibrantz Technologies (vibrantz.com).
+  No public developer API or API marketplace exists for the legacy Ferro brand or for Vibrantz; the company
+  operates in the B2B specialty chemicals space without a developer-facing offering. Any integration
+  is via direct partner / EDI channels.
+notes: No public API and no public pricing. Ferro merged into Vibrantz Technologies in 2022. The plans
+  scaffold has been retained as a stub describing the lack of a public commercial API surface.
+sources:
+  - https://vibrantz.com/
+plans:
+  - id: ferro-no-public-api
+    name: No Public API
+    type: enterprise
+    description: There is no public developer API. Direct partner / EDI integration is negotiated through
+      Vibrantz Technologies sales.
+    entries:
+      - label: Custom partner integration
+        description: Bilateral integration arranged via Vibrantz / former Ferro account team.
+        name: partner_integration
+        type: subscription
+        metric: contract
+        limit: -1
+        timeFrame: year
+        geo: global
+        unit: 1
+        price: contact sales
+        userMultiplied: false
+    elements:
+      - name: Direct partner / EDI integration only
+      - name: 'Status: brand absorbed into Vibrantz Technologies'
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
+x-canonical:
+  generated: '2026-11-01'
+  vocabulary: engine/economics/plans-canonical.yml
+  models:
+  - subscription
+  units:
+  - negotiated
+  plans:
+  - name: No Public API
+    access: enterprise
+    model: subscription
+    model_how: derived
+    units:
+    - negotiated
+    periods:
+    - year
